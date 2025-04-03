@@ -21,7 +21,7 @@ shipmentsV1AppendPositionItemsByCarrierAndTrackingNumberUsingPOST($carrier, $tra
 
 Correct an existing shipment (add sent items) by carrier and tracking number.
 
-This endpoint allows to update an existing shipment with new position items. Note that this is just a correction process for shipments where position items are missing. A separate purchase receipt will be generated for the newly added position items.
+This endpoint allows to update an existing shipment with new position items.
 
 ### Example
 
@@ -140,12 +140,12 @@ void (empty response body)
 ## `shipmentsV1CreatedAndSentMultiparcelShipmentUsingPOST()`
 
 ```php
-shipmentsV1CreatedAndSentMultiparcelShipmentUsingPOST($createShipmentRequestShipmentsV1): \OpenAPI\Client\Otto\Model\CreateMultiparcelShipmentResponseShipmentsV1
+shipmentsV1CreatedAndSentMultiparcelShipmentUsingPOST($multiparcelCreateShipmentRequestShipmentsV1): \OpenAPI\Client\Otto\Model\CreateMultiparcelShipmentResponseShipmentsV1
 ```
 
 Create a multiparcel shipment and mark the position items as sent.
 
-This endpoint should be used to create a multiparcel shipment with a list of parcels for one position item. A shipment is a \"multiparcel shipment\" if one article (position item) is sent in several different shipments. Each shipment has its own tracking key. It confirms that the position item in the list has been handed over to the carrier for final delivery to the customer. At this point, the position item is marked with the state ''SENT'' in OTTO Market. This is the trigger for the generation of a purchase receipt.
+This endpoint is designed for creating multiparcel shipments when a single article (position item) is sent in multiple shipments, each with its own tracking key.
 
 ### Example
 
@@ -164,10 +164,10 @@ $apiInstance = new OpenAPI\Client\Otto\Api\ShipmentsV1Api(
     new GuzzleHttp\Client(),
     $config
 );
-$createShipmentRequestShipmentsV1 = array(new \OpenAPI\Client\Otto\Model\CreateShipmentRequestShipmentsV1()); // \OpenAPI\Client\Otto\Model\CreateShipmentRequestShipmentsV1[] | request
+$multiparcelCreateShipmentRequestShipmentsV1 = array(new \OpenAPI\Client\Otto\Model\MultiparcelCreateShipmentRequestShipmentsV1()); // \OpenAPI\Client\Otto\Model\MultiparcelCreateShipmentRequestShipmentsV1[] | request
 
 try {
-    $result = $apiInstance->shipmentsV1CreatedAndSentMultiparcelShipmentUsingPOST($createShipmentRequestShipmentsV1);
+    $result = $apiInstance->shipmentsV1CreatedAndSentMultiparcelShipmentUsingPOST($multiparcelCreateShipmentRequestShipmentsV1);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentsV1Api->shipmentsV1CreatedAndSentMultiparcelShipmentUsingPOST: ', $e->getMessage(), PHP_EOL;
@@ -178,7 +178,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createShipmentRequestShipmentsV1** | [**\OpenAPI\Client\Otto\Model\CreateShipmentRequestShipmentsV1[]**](../Model/CreateShipmentRequestShipmentsV1.md)| request | |
+| **multiparcelCreateShipmentRequestShipmentsV1** | [**\OpenAPI\Client\Otto\Model\MultiparcelCreateShipmentRequestShipmentsV1[]**](../Model/MultiparcelCreateShipmentRequestShipmentsV1.md)| request | |
 
 ### Return type
 
@@ -205,7 +205,7 @@ shipmentsV1CreatedAndSentShipmentUsingPOST($createShipmentRequestShipmentsV1): \
 
 Create a shipment and mark the position items as sent.
 
-This endpoint should be used to create a shipment with a list of position items. It confirms that the position items in the list have been handed over to the carrier for final delivery to the customer. At this point, the position items are marked with the state ''SENT'' in OTTO Market. This is the trigger for the generation of a purchase receipt.
+This endpoint should be used to create a shipment with a list of position items.
 
 ### Example
 

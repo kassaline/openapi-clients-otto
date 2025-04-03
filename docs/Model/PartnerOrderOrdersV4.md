@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **payment** | [**\OpenAPI\Client\Otto\Model\PaymentOrdersV4**](PaymentOrdersV4.md) |  | [optional]
 **positionItems** | [**\OpenAPI\Client\Otto\Model\PositionItemOrdersV4[]**](PositionItemOrdersV4.md) | The physical position items of this order. Multiple position item can refer to the same product |
 **salesOrderId** | **string** | The id of the corresponding sales order. For one partner the sales order id is unique |
+**suspectedFraudCase** | **bool** | Order is suspected fraud case or not | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

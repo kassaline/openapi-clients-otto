@@ -379,7 +379,7 @@ $apiInstance = new OpenAPI\Client\Otto\Api\ProductsV3Api(
     $config
 );
 $sku = 'sku_example'; // string | search for a product variation by its SKU value
-$fromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | search for content changes from this time on. The maxmimum and default value is 28 days before now. Future values can be specified, but lead to an empty result.
+$fromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | search for content changes from this ISO8601 date on. The maxmimum and default value is 28 days before now. Future values can be specified, but lead to an empty result.
 $page = 56; // int
 $limit = 56; // int | proposed limit for the number of entries per response page (at most 100)
 
@@ -396,7 +396,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| search for a product variation by its SKU value | |
-| **fromDate** | **\DateTime**| search for content changes from this time on. The maxmimum and default value is 28 days before now. Future values can be specified, but lead to an empty result. | [optional] |
+| **fromDate** | **\DateTime**| search for content changes from this ISO8601 date on. The maxmimum and default value is 28 days before now. Future values can be specified, but lead to an empty result. | [optional] |
 | **page** | **int**|  | [optional] |
 | **limit** | **int**| proposed limit for the number of entries per response page (at most 100) | [optional] |
 
@@ -445,7 +445,7 @@ $apiInstance = new OpenAPI\Client\Otto\Api\ProductsV3Api(
     $config
 );
 $sku = array('sku_example'); // string[] | search for product variations by their sku value. Use this to query for multiple variations or if your sku values contain slash ('/') or dot ('.') characters. You may separate multiple sku values by comma or state each one with a &sku= in front of the value. Please note that if you like to query for a single variation whose value contains a comma you have to add one empty &sku= at the end of the query string or use the other endpoint.
-$fromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | search for content changes from this time on. The maxmimum and default value is 28 days before now. Future values can be specified, but lead to an empty result.
+$fromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | search for content changes from this time on. The maxmimum and default value is 28 days before now. Future values can be specified, but lead to an empty result.
 $page = 56; // int
 $limit = 56; // int | proposed limit for the number of content changes per response page (at most 100)
 
@@ -546,7 +546,7 @@ try {
 ## `productsV3GetMarketPlaceStatusList()`
 
 ```php
-productsV3GetMarketPlaceStatusList($sku, $productReference, $category, $brandId, $fromDate, $page, $limit, $marketPlaceStatus): \OpenAPI\Client\Otto\Model\MarketPlaceStatusApiResultProductsV3
+productsV3GetMarketPlaceStatusList($sku, $productReference, $category, $brandId, $fromDate, $page, $limit, $marketPlaceStatus, $sortOrder): \OpenAPI\Client\Otto\Model\MarketPlaceStatusApiResultProductsV3
 ```
 
 Read marketplace status of product variations
@@ -574,13 +574,14 @@ $sku = 'sku_example'; // string | search for product variations by their sku val
 $productReference = 'productReference_example'; // string | search marketplace status by the productReference value of the related product variations
 $category = 'category_example'; // string | search marketplace status by the category value of the related product variations
 $brandId = 'brandId_example'; // string | search marketplace status by the brand ID value of the related product variations
-$fromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | search marketplace status for a time range starting with the given date (in ISO8601, like '2021-10-09T07:52:19.820Z' or '2021-10-09T07:52:19.820+01:00')
+$fromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | search marketplace status for a time range starting with the given date (in ISO8601, like '2021-10-09T07:52:19.820Z' or '2021-10-09T07:52:19.820+01:00')
 $page = 56; // int | page to load
 $limit = 56; // int | proposed limit for the number of marketplace status per response page (at most 1000)
 $marketPlaceStatus = array('marketPlaceStatus_example'); // string[] | only include items that match any of the provided status
+$sortOrder = 'sortOrder_example'; // string | Define the sort order of the resulting entries. Available values are 'desc' for 'newest lastModified first' and 'asc' for 'oldest lastModified first' - default is 'desc'
 
 try {
-    $result = $apiInstance->productsV3GetMarketPlaceStatusList($sku, $productReference, $category, $brandId, $fromDate, $page, $limit, $marketPlaceStatus);
+    $result = $apiInstance->productsV3GetMarketPlaceStatusList($sku, $productReference, $category, $brandId, $fromDate, $page, $limit, $marketPlaceStatus, $sortOrder);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsV3Api->productsV3GetMarketPlaceStatusList: ', $e->getMessage(), PHP_EOL;
@@ -599,6 +600,7 @@ try {
 | **page** | **int**| page to load | [optional] |
 | **limit** | **int**| proposed limit for the number of marketplace status per response page (at most 1000) | [optional] |
 | **marketPlaceStatus** | [**string[]**](../Model/string.md)| only include items that match any of the provided status | [optional] |
+| **sortOrder** | **string**| Define the sort order of the resulting entries. Available values are &#39;desc&#39; for &#39;newest lastModified first&#39; and &#39;asc&#39; for &#39;oldest lastModified first&#39; - default is &#39;desc&#39; | [optional] |
 
 ### Return type
 

@@ -36,7 +36,7 @@ $apiInstance = new OpenAPI\Client\Otto\Api\ReturnShipmentsV1Api(
     new GuzzleHttp\Client(),
     $config
 );
-$datefrom = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | ReturnShipments which are announced after this date or had an status update after this date will be returned for the partner which is determined from the authorization token. The date is considered as UTC.
+$datefrom = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | ReturnShipments which are announced after this date or had an status update after this date will be returned for the partner which is determined from the authorization token. The date is considered as UTC.
 $limit = 25; // int | The maximum number of returnShipments to be returned in each response.
 $next = 'next_example'; // string | The cursor which points to the next returnShipment that should be queried. It is used to paginate the results.
 

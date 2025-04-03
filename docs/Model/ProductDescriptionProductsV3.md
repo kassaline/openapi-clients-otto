@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **brandId** | **string** | Denotes the brand ID of a product. Brands and the mapping of their names to brand Ids should be done using the brand endpoint. Must be present in the Brand service offered via Brand endpoint. Must be identical for all variants of a product. |
 **productLine** | **string** | Denotes the proper name of a product, like &#39;501&#39;. May contain a maximum of 70 characters. If provided, it must be identical for all variants of a product. | [optional]
 **manufacturer** | **string** | Denotes the manufacturer of a product. If provided, it must be identical for all variants of a product. | [optional]
-**productionDate** | **\DateTime** | Denotes the date of manufacture of a product variant. | [optional]
+**productionDate** | **\DateTime** | Denotes the ISO8601 date of manufacture of a product variant. | [optional]
 **multiPack** | **bool** | If the product variant is part of a set: &#39;true&#39;; otherwise &#39;false&#39; | [optional]
 **bundle** | **bool** | If the product variant is part of a bundle: &#39;true&#39;; otherwise &#39;false&#39; | [optional]
 **fscCertified** | **bool** | If the product variant is certified by the Forest Stewardship Council: &#39;true&#39;; otherwise &#39;false&#39; | [optional]

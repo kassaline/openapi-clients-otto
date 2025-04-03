@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cancellationDate** | **\DateTime** | Date the position item was cancelled | [optional]
 **cancellationReason** | **string** | Reason why a position was cancelled | [optional]
+**dealId** | **string** | The unique id of the deal related to the position item | [optional]
+**dealName** | **string** | The name of the deal related to the position item | [optional]
 **expectedDeliveryDate** | **\DateTime** | The date the position item should be delivered | [optional]
 **fulfillmentStatus** | **string** | The fulfillment status of the position item |
 **itemValueDiscount** | [**\OpenAPI\Client\Otto\Model\AmountOrdersV4**](AmountOrdersV4.md) |  | [optional]
@@ -14,6 +16,7 @@ Name | Type | Description | Notes
 **positionItemId** | **string** | The unique id of the position item |
 **processableDate** | **\DateTime** | Date the position item has reached PROCESSABLE fulfillment status | [optional]
 **product** | [**\OpenAPI\Client\Otto\Model\ProductOrdersV4**](ProductOrdersV4.md) |  |
+**returnAcceptedByMarketplace** | **bool** | Flag to indicate that the return has been accepted by the marketplace | [optional]
 **returnedDate** | **\DateTime** | Date the position item was returned | [optional]
 **sentDate** | **\DateTime** | Date the position item was sent | [optional]
 **trackingInfo** | [**\OpenAPI\Client\Otto\Model\TrackingInfoOrdersV4**](TrackingInfoOrdersV4.md) |  | [optional]

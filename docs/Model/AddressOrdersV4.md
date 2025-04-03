@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **addition** | **string** | The addition | [optional]
 **city** | **string** | The city |
-**countryCode** | **string** | The country in SO-3166-1 Alpha-3 format |
-**email** | **string** | The e-mail address; if part of the invoice address it&#39;s a pseudonymized e-mail address | [optional]
+**countryCode** | **string** | The country in ISO-3166-1 Alpha-3 format |
+**email** | **string** | The e-mail address; if part of the delivery address is in plain text; if part of the invoice address it&#39;s a pseudonymized e-mail address | [optional]
 **firstName** | **string** | The firstName |
 **houseNumber** | **string** | The house number |
 **lastName** | **string** | The lastName |
