@@ -71,7 +71,7 @@ class AvailableQuantityResponseDTOAvailabilityV1 implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'lastModified' => 'YYYY-MM-DD'T'HH:mm:ss.SSS'Z'',
+        'lastModified' => '\DateTime',
         'quantity' => 'int64',
         'sku' => null,
         'links' => null
